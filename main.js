@@ -75,14 +75,15 @@ form.addEventListener("change", (e)=>{
       c.addEventListener("mouseover", (evt)=> {
        currColor.style.backgroundColor = evt.target.style.backgroundColor;
       })
-
-      canvas.addEventListener("click", (e)=> {
-        canvas.addEventListener("mouseover", (evt)=> {
-            evt.target.style.backgroundColor = currColor.style.backgroundColor;
-        })
-      })
     }
+    canvas.addEventListener("click", (e)=> {
+      canvas.addEventListener("mouseover", (evt)=> {
+          evt.target.style.backgroundColor = currColor.style.backgroundColor;
+          canvas.addEventListener("click", (evt2)=>{
+            evt2.target.style.backgroundColor = currColor.style.backgroundColor;
+          })
+      })
+    })
   }
 })
-
 
